@@ -1,5 +1,5 @@
 # Personal Portfolio 🔥
-> https://rajaprerak.github.io/
+> https://ruturajsubhedar.github.io/ruturajcv/
 
 :star: Star me on GitHub — it helps!
 
