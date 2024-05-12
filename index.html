@@ -658,6 +658,42 @@
       <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
     </div>
   </section>
+  <div class="container">
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+  <script>
+    // Add your JavaScript code here
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        var formData = new FormData(this);
+        var jsonObject = {};
+        formData.forEach(function(value, key) {
+            jsonObject[key] = value;
+        });
+
+        // Save the feedback data to localStorage
+        var feedbackData = JSON.parse(localStorage.getItem('feedbackData')) || [];
+        feedbackData.push(jsonObject);
+        localStorage.setItem('feedbackData', JSON.stringify(feedbackData));
+
+        alert('Feedback submitted successfully!');
+        // Clear form fields after successful submission
+        document.getElementById("feedbackForm").reset();
+    });
+</script>
 
   <!-- End Contact Section -->
 
